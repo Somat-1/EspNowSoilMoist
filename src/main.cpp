@@ -8,8 +8,8 @@
 #define SENSOR_SIGNAL_PIN 1   // GPIO1 - Capacitive soil sensor analog output (AOUT)
 
 // ========== CALIBRATION VALUES ==========
-#define SOIL_DRY_VALUE    3738  // ADC value in air (0% moisture)
-#define SOIL_WET_VALUE    1324  // ADC value fully submerged (100% moisture)
+#define SOIL_DRY_VALUE    3325  // ADC value in air (0% moisture) - calibrated Dec 2024
+#define SOIL_WET_VALUE    1300  // ADC value fully submerged (100% moisture) - calibrated Dec 2024
 #define BAT_CAL           0.915 // Battery calibration multiplier (refined calibration)
 #define NUM_SAMPLES       10    // Number of ADC samples to average per reading
 
