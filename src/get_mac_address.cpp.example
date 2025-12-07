@@ -1,0 +1,33 @@
+// Simple program to get the MAC address of your ESP32
+// Upload this to your hub ESP32 first to get its MAC address
+// Then update the hubMacAddress in main.cpp with this value
+
+#include <Arduino.h>
+#include <WiFi.h>
+
+void setup() {
+  Serial.begin(115200);
+  delay(1000);
+  
+  Serial.println("\n\n=== ESP32 MAC Address Getter ===");
+  
+  WiFi.mode(WIFI_STA);
+  
+  String macAddress = WiFi.macAddress();
+  Serial.println("\nYour MAC Address:");
+  Serial.println(macAddress);
+  
+  // Also print in array format for easy copy-paste
+  uint8_t mac[6];
+  WiFi.macAddress(mac);
+  
+  Serial.println("\nCopy this to your sender code:");
+  Serial.printf("uint8_t hubMacAddress[] = {0x%02X, 0x%02X, 0x%02X, 0x%02X, 0x%02X, 0x%02X};\n",
+                mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+  
+  Serial.println("\n=== Done ===");
+}
+
+void loop() {
+  delay(10000);
+}
